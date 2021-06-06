@@ -1,4 +1,4 @@
-# Recommended AWS CDK project structure for Python-based small applications
+# Recommended AWS CDK project structure for Python-based simple applications
 
 #### Create development environment
 See [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
@@ -6,8 +6,8 @@ for additional details and prerequisites
 
 ```bash
 # Clone the code
-git clone https://github.com/alexpulver/aws-cdk-project-structure-python-small
-cd aws-cdk-project-structure-python-small
+git clone https://github.com/alexpulver/aws-cdk-project-structure-python-simple
+cd aws-cdk-project-structure-python-simple
 
 # Create Python virtual environment and install the dependencies
 python3 -m venv .venv
