@@ -14,8 +14,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 ./install-deps.sh
 
-## Upgrading dependencies
+## Upgrading dependencies (ordered by constraints)
+pip-compile --upgrade api/runtime/requirements.in
 pip-compile --upgrade requirements.in
+pip-compile --upgrade requirements-dev.in
 ./install-deps.sh
 ```
 

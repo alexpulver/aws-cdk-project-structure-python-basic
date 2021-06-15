@@ -8,4 +8,4 @@ npm install
 
 # Install project dependencies
 pip install pip-tools==6.1.0
-pip-sync requirements.txt
+pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
