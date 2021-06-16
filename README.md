@@ -12,13 +12,15 @@ cd aws-cdk-project-structure-python-basic
 # Create Python virtual environment and install the dependencies
 python3 -m venv .venv
 source .venv/bin/activate
-./install-deps.sh
+./scripts/install-deps.sh
+./scripts/run-tests.sh
 
 ## Upgrading dependencies (ordered by constraints)
 pip-compile --upgrade api/runtime/requirements.in
 pip-compile --upgrade requirements.in
 pip-compile --upgrade requirements-dev.in
-./install-deps.sh
+./scripts/install-deps.sh
+./scripts/run-tests.sh
 ```
 
 #### Deploy the stack
@@ -26,7 +28,19 @@ pip-compile --upgrade requirements-dev.in
 npx cdk deploy AwsCdkProjectDev
 ```
 
+Example output for `npx cdk deploy AwsCdkProjectDev` stack:
+
+```text
+AwsCdkProjectDev.ApiApiGatewayToLambdaLambdaRestApiEndpointDA51B1D3 = https://mebs1wbl2f.execute-api.eu-west-1.amazonaws.com/prod/
+```
+
 #### Delete the stack
 ```bash
 npx cdk destroy AwsCdkProjectDev
+```
+
+#### Testing the web API
+```bash
+$ curl https://mebs1wbl2f.execute-api.eu-west-1.amazonaws.com/prod/
+Hello, CDK! Here is your UUID4: {'uuid': '8b7e99ac-c44b-46ac-990d-22e253b08be4'}
 ```

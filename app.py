@@ -4,7 +4,6 @@ from aws_cdk import core as cdk
 
 from stacks import Application
 
-
 app = cdk.App()
 
 dev_env = cdk.Environment(
