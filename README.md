@@ -10,12 +10,13 @@ git clone https://github.com/alexpulver/aws-cdk-project-structure-python-basic
 cd aws-cdk-project-structure-python-basic
 
 # Create Python virtual environment and install the dependencies
-python3 -m venv .venv
+python3.7 -m venv .venv
 source .venv/bin/activate
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 
 ## Upgrading dependencies (ordered by constraints)
+pip install pip-tools==6.1.0
 pip-compile --upgrade api/runtime/requirements.in
 pip-compile --upgrade requirements.in
 pip-compile --upgrade requirements-dev.in
