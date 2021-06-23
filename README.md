@@ -1,4 +1,4 @@
-# Recommended AWS CDK project structure for Python basic applications
+# Recommended AWS CDK project structure for basic Python applications
 
 #### Create development environment
 See [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
