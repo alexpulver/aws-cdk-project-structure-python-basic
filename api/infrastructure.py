@@ -19,7 +19,7 @@ class Api(cdk.Construct):
         )
         rest_api_props = apigateway.RestApiProps(default_method_options=method_options)
         function_props = lambda_.FunctionProps(
-            runtime=lambda_.Runtime.PYTHON_3_7,
+            runtime=lambda_.Runtime.PYTHON_3_7,  # type: ignore
             code=lambda_.Code.from_asset(
                 str(Api._RUNTIME_DIR),
                 bundling=cdk.BundlingOptions(
