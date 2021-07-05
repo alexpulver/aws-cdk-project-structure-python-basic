@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import cast
 
 from aws_cdk import aws_apigateway as apigateway
 from aws_cdk import aws_lambda as lambda_
@@ -19,7 +20,7 @@ class Api(cdk.Construct):
         )
         rest_api_props = apigateway.RestApiProps(default_method_options=method_options)
         function_props = lambda_.FunctionProps(
-            runtime=lambda_.Runtime.PYTHON_3_7,  # type: ignore
+            runtime=cast(lambda_.Runtime, lambda_.Runtime.PYTHON_3_7),
             code=lambda_.Code.from_asset(
                 str(Api._RUNTIME_DIR),
                 bundling=cdk.BundlingOptions(

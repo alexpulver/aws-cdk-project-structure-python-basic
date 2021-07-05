@@ -5,4 +5,5 @@ flake8
 isort
 mypy
 pylint
+safety
 types-requests

@@ -2,7 +2,9 @@ import os
 
 from aws_cdk import core as cdk
 
-from stacks import Application
+from deployment import Application
+
+APPLICATION_NAME = "AwsCdkProjectBasic"
 
 app = cdk.App()
 
@@ -11,7 +13,7 @@ dev_env = cdk.Environment(
 )
 prod_env = cdk.Environment(account="123456789012", region="eu-west-1")
 
-Application(app, "AwsCdkProjectDev", env=dev_env)
-Application(app, "AwsCdkProjectProd", env=prod_env)
+Application(app, f"{APPLICATION_NAME}-Application-Dev", env=dev_env)
+Application(app, f"{APPLICATION_NAME}-Application-Prod", env=prod_env)
 
 app.synth()
