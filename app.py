@@ -2,9 +2,7 @@ import os
 
 from aws_cdk import core as cdk
 
-from deployment import Application
-
-APPLICATION_NAME = "AwsCdkProjectBasic"
+from deployment import UUID4GeneratorBackend
 
 app = cdk.App()
 
@@ -13,7 +11,7 @@ dev_env = cdk.Environment(
 )
 prod_env = cdk.Environment(account="123456789012", region="eu-west-1")
 
-Application(app, f"{APPLICATION_NAME}-Application-Dev", env=dev_env)
-Application(app, f"{APPLICATION_NAME}-Application-Prod", env=prod_env)
+UUID4GeneratorBackend(app, f"{UUID4GeneratorBackend.__name__}-Dev", env=dev_env)
+UUID4GeneratorBackend(app, f"{UUID4GeneratorBackend.__name__}-Prod", env=prod_env)
 
 app.synth()
