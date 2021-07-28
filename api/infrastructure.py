@@ -15,14 +15,14 @@ class API(cdk.Construct):
             authorization_type=apigateway.AuthorizationType.NONE
         )
         rest_api_props = apigateway.RestApiProps(default_method_options=method_options)
-        source_dir = Path(__file__).resolve().parent.joinpath("runtime")
+        runtime_code_path = Path(__file__).resolve().parent.joinpath("runtime")
         asset_bundling_command = (
             "pip install -r requirements.txt -t /asset-output && cp -au . /asset-output"
         )
         function_props = lambda_.FunctionProps(
             runtime=cast(lambda_.Runtime, lambda_.Runtime.PYTHON_3_7),
             code=lambda_.Code.from_asset(
-                str(source_dir),
+                str(runtime_code_path),
                 bundling=cdk.BundlingOptions(
                     image=lambda_.Runtime.PYTHON_3_7.bundling_image,
                     command=[
