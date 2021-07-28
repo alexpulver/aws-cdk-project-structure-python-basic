@@ -14,7 +14,8 @@ cd aws-cdk-project-structure-python-basic
 ```bash
 python3.7 -m venv .venv
 source .venv/bin/activate
-pip install pip-tools==6.1.0  # [Optional] Needed to upgrade dependencies and cleanup unused packages
+# [Optional] Needed to upgrade dependencies and cleanup unused packages
+pip install pip-tools==6.1.0
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 ```
@@ -23,36 +24,45 @@ pip install pip-tools==6.1.0  # [Optional] Needed to upgrade dependencies and cl
 ```bash
 vi package.json  # Update "aws-cdk" package version
 ./scripts/install-deps.sh
+./scripts/run-tests.sh
 ```
 
 ### [Optional] Upgrade dependencies (ordered by constraints)
+Consider [AWS CDK Toolkit (CLI)](https://docs.aws.amazon.com/cdk/latest/guide/reference.html#versioning) compatibility 
+when upgrading AWS CDK packages version.
+
 ```bash
 pip-compile --upgrade api/runtime/requirements.in
 pip-compile --upgrade requirements.in
 pip-compile --upgrade requirements-dev.in
 ./scripts/install-deps.sh
-pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt  # [Optional] Cleanup unused packages
+# [Optional] Cleanup unused packages
+pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ./scripts/run-tests.sh
 ```
 
 ## Deploy the application to development environment
-The `AwsCdkProjectDev` stack uses your default account and region.
+The `UUID4GeneratorBackend-Dev` stack uses your default account and region.
 ```bash
-npx cdk deploy AwsCdkProjectDev
+npx cdk deploy UUID4GeneratorBackend-Dev
 ```
 
-Example output for `npx cdk deploy AwsCdkProjectDev` stack:
+Example output for `npx cdk deploy UUID4GeneratorBackend-Dev` stack:
 ```text
-AwsCdkProjectDev.ApiApiGatewayToLambdaLambdaRestApiEndpointDA51B1D3 = https://mebs1wbl2f.execute-api.eu-west-1.amazonaws.com/prod/
+ ✅  UUID4GeneratorBackend-Dev
+
+Outputs:
+UUID4GeneratorBackend-Dev.APIApiGatewayToLambdaLambdaRestApiEndpointCDACAFAE = https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/
 ```
 
 ## Delete the stack
 ```bash
-npx cdk destroy AwsCdkProjectDev
+npx cdk destroy UUID4GeneratorBackend-Dev
 ```
 
 ## Testing the web API
+
+Example output for `curl https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/`: 
 ```bash
-$ curl https://mebs1wbl2f.execute-api.eu-west-1.amazonaws.com/prod/
 Hello, CDK! Here is your UUID4: {'uuid': '8b7e99ac-c44b-46ac-990d-22e253b08be4'}
 ```
