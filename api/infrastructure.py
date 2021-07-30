@@ -1,4 +1,4 @@
-from pathlib import Path
+import pathlib
 from typing import cast
 
 from aws_cdk import aws_apigateway as apigateway
@@ -15,7 +15,7 @@ class API(cdk.Construct):
             authorization_type=apigateway.AuthorizationType.NONE
         )
         rest_api_props = apigateway.RestApiProps(default_method_options=method_options)
-        runtime_code_path = Path(__file__).resolve().parent.joinpath("runtime")
+        runtime_code_path = pathlib.Path(__file__).resolve().parent.joinpath("runtime")
         asset_bundling_command = (
             "pip install -r requirements.txt -t /asset-output && cp -au . /asset-output"
         )
