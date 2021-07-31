@@ -14,7 +14,7 @@ def lambda_handler(event: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, 
     }
 
 
-def get_uuid_message():
+def get_uuid_message() -> str:
     response = requests.get("https://httpbin.org/uuid")
     uuid = response.json()["uuid"]
     return f"Hello, CDK! Here is your UUID: {uuid}"
