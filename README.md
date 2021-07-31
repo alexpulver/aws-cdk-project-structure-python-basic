@@ -42,22 +42,22 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ```
 
 ## Deploy the application to development environment
-The `UUID4GeneratorBackend-Dev` stack uses your default account and region.
+The `UUIDGeneratorBackend-Dev` stack uses your default account and region.
 ```bash
-npx cdk deploy UUID4GeneratorBackend-Dev
+npx cdk deploy UUIDGeneratorBackend-Dev
 ```
 
-Example output for `npx cdk deploy UUID4GeneratorBackend-Dev` stack:
+Example output for `npx cdk deploy UUIDGeneratorBackend-Dev` stack:
 ```text
- ✅  UUID4GeneratorBackend-Dev
+ ✅  UUIDGeneratorBackend-Dev
 
 Outputs:
-UUID4GeneratorBackend-Dev.APIApiGatewayToLambdaLambdaRestApiEndpointCDACAFAE = https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/
+UUIDGeneratorBackend-Dev.APIApiGatewayToLambdaLambdaRestApiEndpointCDACAFAE = https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/
 ```
 
 ## Delete the stack
 ```bash
-npx cdk destroy UUID4GeneratorBackend-Dev
+npx cdk destroy UUIDGeneratorBackend-Dev
 ```
 
 ## Testing the web API
