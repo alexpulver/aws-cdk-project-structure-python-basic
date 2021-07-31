@@ -4,7 +4,7 @@ from typing import Any, Dict
 import requests
 
 
-def handler(event: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
+def lambda_handler(event: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
     print(f"request: {json.dumps(event)}")
     result = requests.get("https://httpbin.org/uuid")
     return {

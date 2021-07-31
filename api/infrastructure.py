@@ -32,7 +32,7 @@ class API(cdk.Construct):
                     ],
                 ),
             ),
-            handler="app.handler",
+            handler="app.lambda_handler",
         )
         apigateway_lambda.ApiGatewayToLambda(
             self,
