@@ -64,5 +64,5 @@ npx cdk destroy UUIDGeneratorBackend-Dev
 
 Example output for `curl https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/`: 
 ```bash
-Hello, CDK! Here is your UUID4: {'uuid': '8b7e99ac-c44b-46ac-990d-22e253b08be4'}
+Hello, CDK! Here is your UUID: 8b7e99ac-c44b-46ac-990d-22e253b08be4
 ```
