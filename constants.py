@@ -1,0 +1,4 @@
+CDK_APP_NAME = "UUIDGeneratorBackend"
+
+PROD_ACCOUNT = "111111111111"
+PROD_REGION = "eu-west-1"

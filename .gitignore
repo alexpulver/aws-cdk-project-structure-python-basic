@@ -1,18 +1,8 @@
-# PyCharm files
-.idea/
-
-# pyenv
-.python-version
-
-# macOS files
-.DS_Store
-
-# Environment
-.venv/
-node_modules/
-
 # AWS CDK files
 cdk.out/
+
+# AWS SAM
+.aws-sam/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -21,3 +11,16 @@ __pycache__/
 
 # C extensions
 *.so
+
+# Environment
+.venv/
+node_modules/
+
+# macOS files
+.DS_Store
+
+# PyCharm files
+.idea/
+
+# pyenv
+.python-version

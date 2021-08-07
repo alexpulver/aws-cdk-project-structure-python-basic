@@ -2,8 +2,6 @@
 The project implements a UUID generator backend component that uses Amazon API Gateway
 and AWS Lambda to generate a UUID using https://httpbin.org/uuid.
 
-
-
 ## Create development environment
 See [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
 for additional details and prerequisites
@@ -46,7 +44,7 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ```
 
 ## Deploy the component to development environment
-The `UUIDGeneratorBackend-Dev` stack uses your default account and region.
+The `UUIDGeneratorBackend-Dev` stack uses your default AWS account and region.
 ```bash
 npx cdk deploy UUIDGeneratorBackend-Dev
 ```

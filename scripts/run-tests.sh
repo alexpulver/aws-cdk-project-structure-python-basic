@@ -3,13 +3,14 @@
 set -o errexit
 set -o verbose
 
-_targets=(api app.py deployment.py)
+targets=(api app.py constants.py deployment.py)
 
-bandit --recursive "${_targets[@]}"
-black --check --diff "${_targets[@]}"
-flake8 --config .flake8 "${_targets[@]}"
-isort --settings-path .isort.cfg --check --diff "${_targets[@]}"
-mypy --config-file .mypy.ini --strict api  # Splitting commands due to https://github.com/python/mypy/issues/4008
-mypy --config-file .mypy.ini --strict app.py deployment.py
-pylint --rcfile .pylintrc "${_targets[@]}"
+bandit --recursive "${targets[@]}"
+black --check --diff "${targets[@]}"
+flake8 --config .flake8 "${targets[@]}"
+isort --settings-path .isort.cfg --check --diff "${targets[@]}"
+# mypy: split commands due to https://github.com/python/mypy/issues/4008
+mypy --config-file .mypy.ini "${targets[@]:0:1}"
+mypy --config-file .mypy.ini "${targets[@]:1:3}"
+pylint --rcfile .pylintrc "${targets[@]}"
 safety check -r api/runtime/requirements.txt -r requirements.txt -r requirements-dev.txt
