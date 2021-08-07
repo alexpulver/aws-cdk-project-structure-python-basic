@@ -1,4 +1,8 @@
 # Recommended AWS CDK project structure for basic Python applications
+The project implements a UUID generator backend component that uses Amazon API Gateway
+and AWS Lambda to generate a UUID using https://httpbin.org/uuid.
+
+
 
 ## Create development environment
 See [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
@@ -41,7 +45,7 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ./scripts/run-tests.sh
 ```
 
-## Deploy the application to development environment
+## Deploy the component to development environment
 The `UUIDGeneratorBackend-Dev` stack uses your default account and region.
 ```bash
 npx cdk deploy UUIDGeneratorBackend-Dev
