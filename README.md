@@ -10,7 +10,7 @@ This project is a template. Click “Use this template” (see the screenshot be
 the repository [main page](https://github.com/alexpulver/aws-cdk-project-structure-python-basic)
 to create your own repository based on alexpulver/aws-cdk-project-structure-python-basic. 
 
-![image](https://user-images.githubusercontent.com/4362270/128620835-556c8881-2e6c-4c2b-a0b1-0c673dbb87be.png)
+![template](https://user-images.githubusercontent.com/4362270/128629234-31cd275e-6a3f-4a6a-9010-028a0a279950.png)
 
 The instructions below use the aws-cdk-project-structure-python-basic repository.
 
