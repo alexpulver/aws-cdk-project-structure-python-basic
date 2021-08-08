@@ -1,6 +1,15 @@
 # Recommended AWS CDK project structure for basic Python applications
 The project implements a UUID generator backend component that uses Amazon API Gateway
-and AWS Lambda to generate a UUID using https://httpbin.org/uuid.
+and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
+
+## Create a new repository from aws-cdk-project-structure-python-basic
+This project is a template. Click “Use this template” (see the screenshot below) in 
+the repository [main page](https://github.com/alexpulver/aws-cdk-project-structure-python-basic)
+to create your own repository based on alexpulver/aws-cdk-project-structure-python-basic. 
+
+![image](https://user-images.githubusercontent.com/4362270/128620835-556c8881-2e6c-4c2b-a0b1-0c673dbb87be.png)
+
+The instructions below use the aws-cdk-project-structure-python-basic repository.
 
 ## Create development environment
 See [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
@@ -64,7 +73,14 @@ npx cdk destroy UUIDGeneratorBackend-Dev
 
 ## Testing the web API
 
-Example output for `curl https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/`: 
+Below is an example for using the API:
+
 ```bash
+$ endpoint_url=$(aws cloudformation describe-stacks \
+  --stack-name UUIDGeneratorBackend-Dev \
+  --query 'Stacks[*].Outputs[?OutputKey==`EndpointURL`].OutputValue' \
+  --output text)
+
+$ curl "${endpoint_url}"
 Hello, CDK! Here is your UUID: 8b7e99ac-c44b-46ac-990d-22e253b08be4
 ```
