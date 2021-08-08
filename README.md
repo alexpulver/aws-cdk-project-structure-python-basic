@@ -2,6 +2,9 @@
 The project implements a UUID generator backend component that uses Amazon API Gateway
 and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
 
+![diagram](https://user-images.githubusercontent.com/4362270/128628243-4ec49263-f466-4f95-a733-ce9c04e565e9.png)
+\* Diagram generated using https://github.com/pistazie/cdk-dia
+
 ## Create a new repository from aws-cdk-project-structure-python-basic
 This project is a template. Click “Use this template” (see the screenshot below) in 
 the repository [main page](https://github.com/alexpulver/aws-cdk-project-structure-python-basic)
