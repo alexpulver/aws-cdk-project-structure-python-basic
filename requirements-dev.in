@@ -5,5 +5,7 @@ flake8
 isort
 mypy
 pylint
+radon
 safety
 types-requests
+xenon

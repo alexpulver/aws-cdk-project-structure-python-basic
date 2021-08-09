@@ -14,3 +14,7 @@ mypy --config-file .mypy.ini "${targets[@]:0:1}"
 mypy --config-file .mypy.ini "${targets[@]:1:3}"
 pylint --rcfile .pylintrc "${targets[@]}"
 safety check -r api/runtime/requirements.txt -r requirements.txt -r requirements-dev.txt
+# Report code complexity
+radon mi "${targets[@]}"
+# Exit with non-zero status if code complexity exceeds thresholds
+xenon --max-absolute A --max-modules A --max-average A "${targets[@]}"
