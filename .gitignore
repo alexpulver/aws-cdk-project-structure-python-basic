@@ -1,10 +1,10 @@
-# AWS CDK files
+# AWS CDK
 cdk.out/
 
 # AWS SAM
 .aws-sam/
 
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL
 __pycache__/
 *.py[cod]
 *$py.class
@@ -16,10 +16,13 @@ __pycache__/
 .venv/
 node_modules/
 
-# macOS files
+# macOS
 .DS_Store
 
-# PyCharm files
+# mypy
+.mypy_cache/
+
+# PyCharm
 .idea/
 
 # pyenv
