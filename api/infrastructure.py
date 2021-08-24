@@ -30,7 +30,7 @@ class API(cdk.Construct):
 
     @staticmethod
     def _create_function_props() -> lambda_.FunctionProps:
-        runtime_code_path = pathlib.Path(__file__).resolve().parent.joinpath("runtime")
+        runtime_code_path = pathlib.Path(__file__).parent.joinpath("runtime").resolve()
         asset_bundling_command = (
             "pip install -r requirements.txt -t /asset-output && cp -au . /asset-output"
         )
