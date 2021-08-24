@@ -1,5 +1,6 @@
 -c api/runtime/requirements.txt
-aws_cdk.aws_apigateway
+aws_cdk.aws_apigatewayv2
+aws_cdk.aws_apigatewayv2_integrations
 aws_cdk.aws_lambda
+aws_cdk.aws_lambda_python
 aws_cdk.core
-aws_solutions_constructs.aws_apigateway_lambda

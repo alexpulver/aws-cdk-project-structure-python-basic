@@ -2,7 +2,7 @@
 The project implements a UUID generator backend component that uses Amazon API Gateway
 and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
 
-![diagram](https://user-images.githubusercontent.com/4362270/128628243-4ec49263-f466-4f95-a733-ce9c04e565e9.png)
+![diagram](https://user-images.githubusercontent.com/4362270/130642099-96623fe7-7b2f-4259-b9bf-550b4281c4d5.png)
 \* Diagram generated using https://github.com/pistazie/cdk-dia
 
 ## Create a new repository from aws-cdk-project-structure-python-basic
@@ -29,7 +29,7 @@ cd aws-cdk-project-structure-python-basic
 python3.7 -m venv .venv
 source .venv/bin/activate
 # [Optional] Needed to upgrade dependencies and cleanup unused packages
-pip install pip-tools==6.1.0
+pip install pip-tools==6.2.0
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 ```
@@ -66,7 +66,7 @@ Example output for `npx cdk deploy UUIDGeneratorBackend-Dev` stack:
  ✅  UUIDGeneratorBackend-Dev
 
 Outputs:
-UUIDGeneratorBackend-Dev.APIApiGatewayToLambdaLambdaRestApiEndpointCDACAFAE = https://qtjok31m4c.execute-api.eu-west-1.amazonaws.com/prod/
+UUIDGeneratorBackend-Dev.APIEndpointURL = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
 ```
 
 ## Delete the stack
@@ -81,7 +81,7 @@ Below is an example for using the API:
 ```bash
 $ endpoint_url=$(aws cloudformation describe-stacks \
   --stack-name UUIDGeneratorBackend-Dev \
-  --query 'Stacks[*].Outputs[?OutputKey==`EndpointURL`].OutputValue' \
+  --query 'Stacks[*].Outputs[?OutputKey==`APIEndpointURL`].OutputValue' \
   --output text)
 
 $ curl "${endpoint_url}"
