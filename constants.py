@@ -1,8 +1,8 @@
 import os
 
-from aws_cdk import core as cdk
+import aws_cdk as cdk
 
-CDK_APP_NAME = "UUIDGeneratorBackend"
+CDK_APP_NAME = "UuidGeneratorBackend"
 
 DEV_ENV = cdk.Environment(
     account=os.environ["CDK_DEFAULT_ACCOUNT"], region=os.environ["CDK_DEFAULT_REGION"]

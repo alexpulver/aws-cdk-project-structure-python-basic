@@ -13,7 +13,7 @@ __pycache__/
 *.so
 
 # CDK-Dia
-diagram.png*
+/diagram.*
 
 # Environment
 .venv/

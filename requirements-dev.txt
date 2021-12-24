@@ -4,19 +4,17 @@
 #
 #    pip-compile requirements-dev.in
 #
-appdirs==1.4.4
-    # via black
-astroid==2.6.2
+astroid==2.9.0
     # via pylint
-bandit==1.7.0
+bandit==1.7.1
     # via -r requirements-dev.in
-black==21.6b0
+black==21.12b0
     # via -r requirements-dev.in
-certifi==2021.5.30
+certifi==2021.10.8
     # via requests
-chardet==4.0.0
+charset-normalizer==2.0.9
     # via requests
-click==8.0.1
+click==8.0.3
     # via
     #   black
     #   safety
@@ -24,30 +22,26 @@ colorama==0.4.4
     # via radon
 dparse==0.5.1
     # via safety
-flake8-polyfill==1.0.2
-    # via radon
-flake8==3.9.2
-    # via
-    #   -r requirements-dev.in
-    #   flake8-polyfill
+flake8==4.0.1
+    # via -r requirements-dev.in
 future==0.18.2
     # via radon
-gitdb==4.0.7
+gitdb==4.0.9
     # via gitpython
-gitpython==3.1.18
+gitpython==3.1.24
     # via bandit
-idna==2.10
+idna==3.3
     # via requests
-importlib-metadata==4.6.1
+importlib-metadata==4.2.0
     # via
     #   click
     #   flake8
     #   stevedore
-isort==5.9.1
+isort==5.10.1
     # via
     #   -r requirements-dev.in
     #   pylint
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.7.1
     # via astroid
 mando==0.6.4
     # via radon
@@ -59,36 +53,38 @@ mypy-extensions==0.4.3
     # via
     #   black
     #   mypy
-mypy==0.910
+mypy==0.930
     # via -r requirements-dev.in
-packaging==21.0
+packaging==21.3
     # via
     #   dparse
     #   safety
-pathspec==0.8.1
+pathspec==0.9.0
     # via black
-pbr==5.6.0
+pbr==5.8.0
     # via stevedore
-pycodestyle==2.7.0
+platformdirs==2.4.0
+    # via
+    #   black
+    #   pylint
+pycodestyle==2.8.0
     # via flake8
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via flake8
-pylint==2.9.3
+pylint==2.12.2
     # via -r requirements-dev.in
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via packaging
 pyyaml==5.4.1
     # via
     #   bandit
     #   dparse
     #   xenon
-radon==4.5.2
+radon==5.1.0
     # via
     #   -r requirements-dev.in
     #   xenon
-regex==2021.7.1
-    # via black
-requests==2.25.1
+requests==2.26.0
     # via
     #   safety
     #   xenon
@@ -97,26 +93,27 @@ safety==1.10.3
 six==1.16.0
     # via
     #   -c requirements.txt
-    #   bandit
     #   mando
-smmap==4.0.0
+smmap==5.0.0
     # via gitdb
-stevedore==3.3.0
+stevedore==3.5.0
     # via bandit
 toml==0.10.2
     # via
-    #   black
     #   dparse
-    #   mypy
     #   pylint
-typed-ast==1.4.3
+tomli==1.2.3
+    # via
+    #   black
+    #   mypy
+typed-ast==1.5.1
     # via
     #   astroid
     #   black
     #   mypy
-types-requests==2.25.0
+types-requests==2.26.2
     # via -r requirements-dev.in
-typing-extensions==3.10.0.0
+typing-extensions==4.0.1
     # via
     #   -c requirements.txt
     #   astroid
@@ -124,13 +121,14 @@ typing-extensions==3.10.0.0
     #   gitpython
     #   importlib-metadata
     #   mypy
-urllib3==1.26.6
+    #   pylint
+urllib3==1.26.7
     # via requests
-wrapt==1.12.1
+wrapt==1.13.3
     # via astroid
-xenon==0.7.3
+xenon==0.8.0
     # via -r requirements-dev.in
-zipp==3.5.0
+zipp==3.6.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

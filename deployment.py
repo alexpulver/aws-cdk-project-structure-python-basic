@@ -1,18 +1,19 @@
 from typing import Any
 
-from aws_cdk import core as cdk
+import aws_cdk as cdk
+from constructs import Construct
 
-from api.infrastructure import API
+from api.infrastructure import Api
 
 
-class UUIDGeneratorBackend(cdk.Stack):
-    def __init__(self, scope: cdk.Construct, id_: str, **kwargs: Any) -> None:
+class UuidGeneratorBackend(cdk.Stack):
+    def __init__(self, scope: Construct, id_: str, **kwargs: Any) -> None:
         super().__init__(scope, id_, **kwargs)
 
-        api = API(self, "API")
+        api = Api(self, "Api")
         cdk.CfnOutput(
             self,
-            "APIEndpointURL",
-            # API doesn't disable create_default_stage, hence URL will be defined
-            value=api.http_api.url,  # type: ignore
+            "ApiEndpoint",
+            # Api doesn't disable create_default_stage, hence URL will be defined
+            value=api.api_gateway_http_api.url,  # type: ignore
         )

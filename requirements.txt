@@ -4,329 +4,50 @@
 #
 #    pip-compile requirements.in
 #
-attrs==20.3.0
+attrs==21.2.0
     # via
     #   cattrs
     #   jsii
-aws-cdk.assets==1.114.0
-    # via
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-s3-assets
-aws-cdk.aws-applicationautoscaling==1.114.0
-    # via aws-cdk.aws-lambda
-aws-cdk.aws-autoscaling-common==1.114.0
-    # via aws-cdk.aws-applicationautoscaling
-aws-cdk.aws-certificatemanager==1.114.0
-    # via
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-elasticloadbalancingv2
-aws-cdk.aws-cloudformation==1.114.0
-    # via aws-cdk.custom-resources
-aws-cdk.aws-cloudwatch==1.114.0
-    # via
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-aws-cdk.aws-codeguruprofiler==1.114.0
-    # via aws-cdk.aws-lambda
-aws-cdk.aws-codestarnotifications==1.114.0
-    # via aws-cdk.aws-sns
-aws-cdk.aws-ec2==1.114.0
-    # via
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-servicediscovery
-    #   aws-cdk.custom-resources
-aws-cdk.aws-ecr-assets==1.114.0
-    # via aws-cdk.aws-lambda
-aws-cdk.aws-ecr==1.114.0
-    # via
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-lambda
-aws-cdk.aws-efs==1.114.0
-    # via aws-cdk.aws-lambda
-aws-cdk.aws-elasticloadbalancingv2==1.114.0
-    # via
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-servicediscovery
-aws-cdk.aws-events==1.114.0
-    # via
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-sns
-aws-cdk.aws-iam==1.114.0
-    # via
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-autoscaling-common
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-cloudwatch
-    #   aws-cdk.aws-codeguruprofiler
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-events
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.custom-resources
-aws-cdk.aws-kms==1.114.0
-    # via
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-aws-cdk.aws-logs==1.114.0
-    # via
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-route53
-    #   aws-cdk.custom-resources
-aws-cdk.aws-route53==1.114.0
-    # via
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-servicediscovery
-aws-cdk.aws-s3-assets==1.114.0
-    # via
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-logs
-aws-cdk.aws-s3==1.114.0
-    # via
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-s3-assets
-aws-cdk.aws-servicediscovery==1.114.0
-    # via aws-cdk.aws-apigatewayv2-integrations
-aws-cdk.aws-signer==1.114.0
-    # via aws-cdk.aws-lambda
-aws-cdk.aws-sns==1.114.0
-    # via
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.custom-resources
-aws-cdk.aws-sqs==1.114.0
-    # via
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-sns
-aws-cdk.aws-ssm==1.114.0
-    # via aws-cdk.aws-ec2
-aws-cdk.cloud-assembly-schema==1.114.0
-    # via
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.core
-    #   aws-cdk.cx-api
-aws-cdk.custom-resources==1.114.0
-    # via aws-cdk.aws-route53
-aws-cdk.cx-api==1.114.0
-    # via
-    #   aws-cdk.assets
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.core
-aws-cdk.region-info==1.114.0
-    # via
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-iam
-    #   aws-cdk.core
-aws_cdk.aws_apigatewayv2==1.114.0
+aws-cdk-lib==2.3.0
     # via
     #   -r requirements.in
-    #   aws-cdk.aws-apigatewayv2-integrations
-aws_cdk.aws_apigatewayv2_integrations==1.114.0
+    #   aws-cdk.aws-apigatewayv2-alpha
+    #   aws-cdk.aws-apigatewayv2-integrations-alpha
+    #   aws-cdk.aws-lambda-python-alpha
+aws-cdk.aws-apigatewayv2-alpha==2.3.0.a0
+    # via
+    #   -r requirements.in
+    #   aws-cdk.aws-apigatewayv2-integrations-alpha
+aws-cdk.aws-apigatewayv2-integrations-alpha==2.3.0a0
     # via -r requirements.in
-aws_cdk.aws_lambda==1.114.0
-    # via
-    #   -r requirements.in
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.custom-resources
-aws_cdk.aws_lambda_python==1.114.0
+aws-cdk.aws-lambda-python-alpha==2.3.0a0
     # via -r requirements.in
-aws_cdk.core==1.114.0
-    # via
-    #   -r requirements.in
-    #   aws-cdk.assets
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-autoscaling-common
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-cloudwatch
-    #   aws-cdk.aws-codeguruprofiler
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-events
-    #   aws-cdk.aws-iam
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-servicediscovery
-    #   aws-cdk.aws-signer
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.custom-resources
-cattrs==1.6.0
+cattrs==1.8.0
     # via jsii
-constructs==3.3.75
+constructs==10.0.13
     # via
-    #   aws-cdk.assets
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-autoscaling-common
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-cloudwatch
-    #   aws-cdk.aws-codeguruprofiler
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-events
-    #   aws-cdk.aws-iam
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-servicediscovery
-    #   aws-cdk.aws-signer
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.core
-    #   aws-cdk.custom-resources
-jsii==1.32.0
+    #   -r requirements.in
+    #   aws-cdk-lib
+    #   aws-cdk.aws-apigatewayv2-alpha
+    #   aws-cdk.aws-apigatewayv2-integrations-alpha
+    #   aws-cdk.aws-lambda-python-alpha
+jsii==1.49.0
     # via
-    #   aws-cdk.assets
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-autoscaling-common
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-cloudwatch
-    #   aws-cdk.aws-codeguruprofiler
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-events
-    #   aws-cdk.aws-iam
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-servicediscovery
-    #   aws-cdk.aws-signer
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.cloud-assembly-schema
-    #   aws-cdk.core
-    #   aws-cdk.custom-resources
-    #   aws-cdk.cx-api
-    #   aws-cdk.region-info
+    #   aws-cdk-lib
+    #   aws-cdk.aws-apigatewayv2-alpha
+    #   aws-cdk.aws-apigatewayv2-integrations-alpha
+    #   aws-cdk.aws-lambda-python-alpha
     #   constructs
 publication==0.0.3
     # via
-    #   aws-cdk.assets
-    #   aws-cdk.aws-apigatewayv2
-    #   aws-cdk.aws-apigatewayv2-integrations
-    #   aws-cdk.aws-applicationautoscaling
-    #   aws-cdk.aws-autoscaling-common
-    #   aws-cdk.aws-certificatemanager
-    #   aws-cdk.aws-cloudformation
-    #   aws-cdk.aws-cloudwatch
-    #   aws-cdk.aws-codeguruprofiler
-    #   aws-cdk.aws-ec2
-    #   aws-cdk.aws-ecr
-    #   aws-cdk.aws-ecr-assets
-    #   aws-cdk.aws-efs
-    #   aws-cdk.aws-elasticloadbalancingv2
-    #   aws-cdk.aws-events
-    #   aws-cdk.aws-iam
-    #   aws-cdk.aws-kms
-    #   aws-cdk.aws-lambda
-    #   aws-cdk.aws-lambda-python
-    #   aws-cdk.aws-logs
-    #   aws-cdk.aws-route53
-    #   aws-cdk.aws-s3
-    #   aws-cdk.aws-s3-assets
-    #   aws-cdk.aws-servicediscovery
-    #   aws-cdk.aws-signer
-    #   aws-cdk.aws-sns
-    #   aws-cdk.aws-sqs
-    #   aws-cdk.aws-ssm
-    #   aws-cdk.cloud-assembly-schema
-    #   aws-cdk.core
-    #   aws-cdk.custom-resources
-    #   aws-cdk.cx-api
-    #   aws-cdk.region-info
+    #   aws-cdk-lib
+    #   aws-cdk.aws-apigatewayv2-alpha
+    #   aws-cdk.aws-apigatewayv2-integrations-alpha
+    #   aws-cdk.aws-lambda-python-alpha
     #   constructs
-python-dateutil==2.8.1
+python-dateutil==2.8.2
     # via jsii
 six==1.16.0
     # via python-dateutil
-typing-extensions==3.10.0.0
+typing-extensions==4.0.1
     # via jsii

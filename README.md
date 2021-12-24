@@ -2,7 +2,7 @@
 The project implements a UUID generator backend component that uses Amazon API Gateway
 and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
 
-![diagram](https://user-images.githubusercontent.com/4362270/130642099-96623fe7-7b2f-4259-b9bf-550b4281c4d5.png)
+![diagram](https://user-images.githubusercontent.com/4362270/147329761-d2834879-de3a-40d0-8af6-6b787dbc895a.png)
 \* Diagram generated using https://github.com/pistazie/cdk-dia
 
 ## Create a new repository from aws-cdk-project-structure-python-basic
@@ -29,7 +29,7 @@ cd aws-cdk-project-structure-python-basic
 python3.7 -m venv .venv
 source .venv/bin/activate
 # [Optional] Needed to upgrade dependencies and cleanup unused packages
-pip install pip-tools==6.2.0
+pip install pip-tools==6.4.0
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 ```
@@ -56,34 +56,34 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ```
 
 ## Deploy the component to development environment
-The `UUIDGeneratorBackend-Dev` stack uses your default AWS account and region.
+The `UuidGeneratorBackend-Dev` stack uses your default AWS account and region.
 ```bash
-npx cdk deploy UUIDGeneratorBackend-Dev
+npx cdk deploy UuidGeneratorBackend-Dev
 ```
 
-Example output for `npx cdk deploy UUIDGeneratorBackend-Dev` stack:
+Example output for `npx cdk deploy UuidGeneratorBackend-Dev` stack:
 ```text
- ✅  UUIDGeneratorBackend-Dev
+ ✅  UuidGeneratorBackend-Dev
 
 Outputs:
-UUIDGeneratorBackend-Dev.APIEndpointURL = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
+UuidGeneratorBackend-Dev.ApiEndpoint = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
 ```
 
 ## Delete the stack
 ```bash
-npx cdk destroy UUIDGeneratorBackend-Dev
+npx cdk destroy UuidGeneratorBackend-Dev
 ```
 
-## Testing the web API
+## Testing the API
 
 Below is an example for using the API:
 
 ```bash
-$ endpoint_url=$(aws cloudformation describe-stacks \
-  --stack-name UUIDGeneratorBackend-Dev \
-  --query 'Stacks[*].Outputs[?OutputKey==`APIEndpointURL`].OutputValue' \
+$ api_endpoint=$(aws cloudformation describe-stacks \
+  --stack-name UuidGeneratorBackend-Dev \
+  --query 'Stacks[*].Outputs[?OutputKey==`ApiEndpoint`].OutputValue' \
   --output text)
 
-$ curl "${endpoint_url}"
+$ curl "${api_endpoint}"
 Hello, CDK! Here is your UUID: 8b7e99ac-c44b-46ac-990d-22e253b08be4
 ```
