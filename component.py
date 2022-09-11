@@ -6,7 +6,7 @@ from constructs import Construct
 from api.infrastructure import Api
 
 
-class UuidGeneratorBackend(cdk.Stack):
+class UuidGeneratorBackendComponent(cdk.Stack):
     def __init__(self, scope: Construct, id_: str, **kwargs: Any) -> None:
         super().__init__(scope, id_, **kwargs)
 
