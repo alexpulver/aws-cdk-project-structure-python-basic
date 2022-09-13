@@ -2,7 +2,7 @@
 The project implements a UUID generator backend component that uses Amazon API Gateway
 and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
 
-![diagram](https://user-images.githubusercontent.com/4362270/147329761-d2834879-de3a-40d0-8af6-6b787dbc895a.png)
+![diagram](https://user-images.githubusercontent.com/4362270/189936525-208fc0e3-df23-4edc-b59d-d7a3e5b7e72d.png)
 \* Diagram generated using https://github.com/pistazie/cdk-dia
 
 ## Create a new repository from aws-cdk-project-structure-python-basic
@@ -59,22 +59,22 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ```
 
 ## Deploy the component to development environment
-The `UuidGeneratorBackend-Dev` stack uses your default AWS account and region.
+The `UuidGeneratorBackendSandbox` stack uses your default AWS account and region.
 ```bash
-npx cdk deploy UuidGeneratorBackend-Dev
+npx cdk deploy UuidGeneratorBackendSandbox
 ```
 
-Example output for `npx cdk deploy UuidGeneratorBackend-Dev` stack:
+Example output for `npx cdk deploy UuidGeneratorBackendSandbox` stack:
 ```text
- ✅  UuidGeneratorBackend-Dev
+ ✅  UuidGeneratorBackendSandbox
 
 Outputs:
-UuidGeneratorBackend-Dev.ApiEndpoint = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
+UuidGeneratorBackendSandbox.APIEndpoint = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
 ```
 
 ## Delete the stack
 ```bash
-npx cdk destroy UuidGeneratorBackend-Dev
+npx cdk destroy UuidGeneratorBackendSandbox
 ```
 
 ## Testing the API
@@ -83,8 +83,8 @@ Below is an example for using the API:
 
 ```bash
 $ api_endpoint=$(aws cloudformation describe-stacks \
-  --stack-name UuidGeneratorBackend-Dev \
-  --query 'Stacks[*].Outputs[?OutputKey==`ApiEndpoint`].OutputValue' \
+  --stack-name UuidGeneratorBackendSandbox \
+  --query 'Stacks[*].Outputs[?OutputKey==`APIEndpoint`].OutputValue' \
   --output text)
 
 $ curl "${api_endpoint}"
