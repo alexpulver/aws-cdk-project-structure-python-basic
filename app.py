@@ -7,6 +7,7 @@ from component import UuidGeneratorBackend
 
 app = cdk.App()
 
+# Component sandbox stack
 UuidGeneratorBackend(
     app,
     constants.APP_NAME + "Sandbox",
@@ -16,6 +17,7 @@ UuidGeneratorBackend(
     ),
 )
 
+# Component production stack
 UuidGeneratorBackend(
     app,
     constants.APP_NAME + "Production",

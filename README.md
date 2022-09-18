@@ -58,7 +58,7 @@ pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
 ./scripts/run-tests.sh
 ```
 
-## Deploy the component to development environment
+## Deploy the component to sandbox environment
 The `UuidGeneratorBackendSandbox` stack uses your default AWS account and region.
 ```bash
 npx cdk deploy UuidGeneratorBackendSandbox

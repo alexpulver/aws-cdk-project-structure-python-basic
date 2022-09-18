@@ -1,7 +1,7 @@
 -c requirements.txt
 bandit
 black
-flake8
+flake8~=3.9
 isort
 mypy
 pylint
