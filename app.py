@@ -3,24 +3,24 @@ import os
 import aws_cdk as cdk
 
 import constants
-from component import UuidGeneratorBackend
+from service.service_stack import ServiceStack
 
 app = cdk.App()
 
-# Component sandbox stack
-UuidGeneratorBackend(
+# Service sandbox stack
+ServiceStack(
     app,
-    constants.APP_NAME + "Sandbox",
+    f"{constants.APP_NAME}-Service-Sandbox",
     env=cdk.Environment(
         account=os.environ["CDK_DEFAULT_ACCOUNT"],
         region=os.environ["CDK_DEFAULT_REGION"],
     ),
 )
 
-# Component production stack
-UuidGeneratorBackend(
+# Service production stack
+ServiceStack(
     app,
-    constants.APP_NAME + "Production",
+    f"{constants.APP_NAME}-Service-Production",
     env=cdk.Environment(account="111111111111", region="eu-west-1"),
 )
 

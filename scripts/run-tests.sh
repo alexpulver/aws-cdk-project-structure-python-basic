@@ -3,7 +3,7 @@
 set -o errexit
 set -o verbose
 
-targets=(api app.py component.py constants.py)
+targets=(service app.py constants.py)
 
 # Find common security issues (https://bandit.readthedocs.io)
 bandit --recursive "${targets[@]}"
@@ -17,20 +17,19 @@ flake8 --config .flake8 "${targets[@]}"
 # Sort imports (https://pycqa.github.io/isort)
 isort --settings-path .isort.cfg --check --diff "${targets[@]}"
 
-# Static type checker (https://mypy.readthedocs.io)
-mypy --config-file .mypy.ini "${targets[@]}"
-
-# Check for errors, enforce a coding standard, look for code smells (http://pylint.pycqa.org)
-pylint --rcfile .pylintrc "${targets[@]}"
-
 # Check dependencies for security issues (https://pyup.io/safety)
-safety check \
-  -r api/runtime/requirements.txt \
-  -r requirements.txt \
-  -r requirements-dev.txt
+safety check -r service/api/requirements.txt -r requirements.txt -r requirements-dev.txt
 
 # Report code complexity (https://radon.readthedocs.io)
 radon mi "${targets[@]}"
 
 # Exit with non-zero status if code complexity exceeds thresholds (https://xenon.readthedocs.io)
 xenon --max-absolute A --max-modules A --max-average A "${targets[@]}"
+
+# Static type checker (https://mypy.readthedocs.io)
+MYPYPATH="${PWD}" mypy --config-file .mypy.ini --exclude service/api "${targets[@]}"
+MYPYPATH="${PWD}/service/api" mypy --config-file .mypy.ini --explicit-package-bases service/api
+
+# Check for errors, enforce a coding standard, look for code smells (http://pylint.pycqa.org)
+PYTHONPATH="${PWD}" pylint --rcfile .pylintrc --ignore service/api "${targets[@]}"
+PYTHONPATH="${PWD}/service/api" pylint --rcfile .pylintrc service/api

@@ -1,1 +1,1 @@
-APP_NAME = "UuidGeneratorBackend"
+APP_NAME = "UUIDGeneratorBackend"

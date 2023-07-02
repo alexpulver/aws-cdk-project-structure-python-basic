@@ -1,8 +1,8 @@
 # Recommended AWS CDK project structure for basic Python applications
-The project implements a UUID generator backend component that uses Amazon API Gateway
-and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
+The application implements a *UUID generator backend* service that uses 
+Amazon API Gateway and AWS Lambda to generate a UUID with https://httpbin.org/uuid.
 
-![diagram](https://user-images.githubusercontent.com/4362270/189936525-208fc0e3-df23-4edc-b59d-d7a3e5b7e72d.png)
+![diagram](https://github.com/alexpulver/aws-cdk-project-structure-python-basic/assets/4362270/e233de42-e290-4e12-b1fd-b76e0f6d7bb4)
 \* Diagram generated using https://github.com/pistazie/cdk-dia
 
 ## Create a new repository from aws-cdk-project-structure-python-basic
@@ -29,10 +29,8 @@ cd aws-cdk-project-structure-python-basic
 python3.7 -m venv .venv
 source .venv/bin/activate
 # [Optional] Needed to upgrade dependencies and cleanup unused packages
-# Pinning pip-tools to 6.4.0 and pip to 21.3.1 due to
-# https://github.com/jazzband/pip-tools/issues/1576
-pip install pip-tools==6.4.0
-pip install pip==21.3.1
+pip install pip-tools==6.14.0
+pip install pip==23.1.2
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 ```
@@ -49,32 +47,32 @@ Consider [AWS CDK Toolkit (CLI)](https://docs.aws.amazon.com/cdk/latest/guide/re
 when upgrading AWS CDK packages version.
 
 ```bash
-pip-compile --upgrade api/runtime/requirements.in
+pip-compile --upgrade service/api/requirements.in
 pip-compile --upgrade requirements.in
 pip-compile --upgrade requirements-dev.in
 ./scripts/install-deps.sh
 # [Optional] Cleanup unused packages
-pip-sync api/runtime/requirements.txt requirements.txt requirements-dev.txt
+pip-sync service/api/requirements.txt requirements.txt requirements-dev.txt
 ./scripts/run-tests.sh
 ```
 
 ## Deploy the component to sandbox environment
-The `UuidGeneratorBackendSandbox` stack uses your default AWS account and region.
+The `UUIDGeneratorBackend-Service-Sandbox` stack uses your default AWS account and region.
 ```bash
-npx cdk deploy UuidGeneratorBackendSandbox
+npx cdk deploy UUIDGeneratorBackend-Service-Sandbox
 ```
 
-Example output for `npx cdk deploy UuidGeneratorBackendSandbox` stack:
+Example output for `npx cdk deploy UUIDGeneratorBackend-Service-Sandbox` stack:
 ```text
- ✅  UuidGeneratorBackendSandbox
+ ✅  UUIDGeneratorBackend-Service-Sandbox
 
 Outputs:
-UuidGeneratorBackendSandbox.APIEndpoint = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
+UUIDGeneratorBackend-Service-Sandbox.APIEndpoint = https://lsw18met42.execute-api.eu-west-1.amazonaws.com/
 ```
 
 ## Delete the stack
 ```bash
-npx cdk destroy UuidGeneratorBackendSandbox
+npx cdk destroy UUIDGeneratorBackend-Service-Sandbox
 ```
 
 ## Testing the API
@@ -83,7 +81,7 @@ Below is an example for using the API:
 
 ```bash
 $ api_endpoint=$(aws cloudformation describe-stacks \
-  --stack-name UuidGeneratorBackendSandbox \
+  --stack-name UUIDGeneratorBackend-Service-Sandbox \
   --query 'Stacks[*].Outputs[?OutputKey==`APIEndpoint`].OutputValue' \
   --output text)
 
